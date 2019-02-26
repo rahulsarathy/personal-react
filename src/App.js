@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Carousel from './components/Carousel'
+import './components/App.scss';
+import Carousel from './components/Carousel.js';
+
+var items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 class App extends Component {
 
-  content = [3, 4, 5 , 6];
 
   render() {
     return (
@@ -17,7 +19,7 @@ class App extends Component {
             <li>Rahul Sarathy</li>
           </ul>
         </div>
-        <Carousel content={this.content}/>
+        <Carousel items={items} active={0}/>
       </div>
     );
   }
