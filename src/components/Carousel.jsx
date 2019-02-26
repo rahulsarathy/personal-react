@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './components.css';
+import Element from './Element'
 
 class Carousel extends Component {
 
@@ -11,32 +12,53 @@ class Carousel extends Component {
     <li key={number}>{number}</li>
     );
 
-    listItems = this.highlightCorrect(listItems)
 
     this.state = {
-      listItems: listItems
+      listItems: listItems,
+      active: 0
     };
 
+    listItems = this.highlightCorrect(listItems);
    }
 
-   highlightCorrect(content){
+   highlightCorrect(content) {
     var arrayLength = content.length;
-    var toRet = [];
-    for (var i = 0; i< arrayLength; i++)
+
+    for (var i =0; i< arrayLength; i++)
     {
-      var key = content[i].key
-      content[i] = <li className="highlighted" key={key}>{key}</li>
+      var value = content[i].key;
+      var tofill;
+      var active = 0;
+      if (i === active)
+      {
+        tofill = <Element key={value} value={value} active={true} />
+      }
+      else {
+        tofill = <Element key={value} value={value} active={false} />
+      }
+      content[i] = tofill;
     }
+
     return content
    }
 
   render() {
     return (
-      <div>
-        <ul>{this.state.listItems}</ul>
+      <div className="carousel">
+        <div className="left">
+        Left
+        </div>
+        <div className="vertical">
+          <ul>{this.state.listItems}</ul>
+        </div>
+        <div className="right">
+        Right
+        </div>
       </div>
     );
   }
+
+
 }
 
 export default Carousel;
