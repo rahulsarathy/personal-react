@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Carousel from './components/Carousel'
 
 class App extends Component {
+
+  content = [3, 4, 5 , 6];
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <div>
+        </div>
+        <div>
+          <ul>
+            <li>Projects</li>
+            <li>Experience</li>
+            <li>Rahul Sarathy</li>
+          </ul>
+        </div>
+        <Carousel content={this.content}/>
       </div>
     );
   }
