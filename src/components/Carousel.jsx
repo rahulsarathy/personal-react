@@ -1,64 +1,49 @@
 import React, { Component } from 'react';
 import './components.css';
-import Element from './Element'
+import Navbar from './Navbar'
+import Project from './Project'
 
 class Carousel extends Component {
 
    constructor(props){
     super(props);
-    var items = this.props.content;
-
-    var listItems = items.map((number) => 
-    <li key={number}>{number}</li>
-    );
+    this.handleDown = this.handleDown.bind(this);
+    this.handleUp = this.handleUp.bind(this);
 
 
     this.state = {
-      listItems: listItems,
-      active: 0
+      selected: 0, 
+      zoom: 1.0
     };
-
-    listItems = this.highlightCorrect(listItems);
+   
    }
 
-   highlightCorrect(content) {
-    var arrayLength = content.length;
-
-    for (var i =0; i< arrayLength; i++)
-    {
-      var value = content[i].key;
-      var tofill;
-      var active = 0;
-      if (i === active)
+   handleDown(event) {
+    this.setState(
       {
-        tofill = <Element key={value} value={value} active={true} />
-      }
-      else {
-        tofill = <Element key={value} value={value} active={false} />
-      }
-      content[i] = tofill;
-    }
-
-    return content
+        zoom: 0.5
+      });
    }
+
+   handleUp(event) {
+    this.setState(
+      {
+        zoom: 1.0
+      });
+   }
+
 
   render() {
     return (
       <div className="carousel">
-        <div className="left">
-        Left
-        </div>
-        <div className="vertical">
-          <ul>{this.state.listItems}</ul>
-        </div>
-        <div className="right">
-        Right
-        </div>
+        <Project zoom={this.state.zoom}/>
+        <Navbar handleDown={this.handleDown} handleUp={this.handleUp}/>
       </div>
     );
   }
 
-
 }
 
 export default Carousel;
+
+
