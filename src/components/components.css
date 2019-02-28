@@ -23,7 +23,7 @@ margin-top: 100px;
 .project {
    -webkit-transition: all 1s ease-in-out;
    -moz-transition: all 1s ease-in-out;
-  transition: zoom 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 .box {
@@ -100,4 +100,34 @@ margin-top: 100px;
   bottom: 250px;
   left: 750px;
 
+}
+
+
+.progressbar .progress {
+  background-color: green;
+  border-radius: 4px;
+  transition: width 400ms ease-in-out;
+  height: 100%;
+}
+
+.progressbar {
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#App {
+  width: 70%;
+  height: 100%;
+  margin: 10px;
 }
