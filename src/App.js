@@ -5,7 +5,7 @@ import {Carousel, Menu, Navbar} from './components/Components'
 class App extends Component {
   constructor(props) {
     super(props);
-        this.handleDown = this.handleDown.bind(this);
+    this.handleDown = this.handleDown.bind(this);
     this.handleUp = this.handleUp.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);

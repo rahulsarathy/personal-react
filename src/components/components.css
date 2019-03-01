@@ -29,7 +29,6 @@ filter: blur(4px);
 border-style: solid;
 transform: scale(0.5);
 display: inline-block;
-margin-left: 130px;
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
   transition: all 200ms ease-in-out;

@@ -22,7 +22,7 @@ class Carousel extends Component {
         zoom = this.props.zoom; 
       }
       else {
-         zoom = false;
+        zoom = 0.5;
         selected = false;
       }
 
