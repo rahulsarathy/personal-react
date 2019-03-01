@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { wrapGrid } from 'animate-css-grid';
 import './components.css';
 import Project from './Project'
 
@@ -13,7 +14,6 @@ class Carousel extends Component {
     projects = [];
     var zoom;
     var selected;
-    console.log("current Project is " + this.props.currentProject);
     for (var i =0; i < images.length; i++)
     {
       if ( i === Number.parseInt(this.props.currentProject))
@@ -32,9 +32,8 @@ class Carousel extends Component {
 
   render() {
     var toShift = 30 + this.props.currentProject * -24.92
-    var shift = {
-      marginLeft: toShift + '%'
-    };
+    var shift = this.props.zoom > 0.5 ? {marginLeft: toShift + '%'} : {marginLeft: toShift + '%', gridTemplateColumns: "300px 300px 300px"};
+
     this.createProjects();
     return (
       <div>

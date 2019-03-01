@@ -37,8 +37,8 @@ display: inline-block;
 .selected {
     width: 800px;
   height: 500px;
-  border-style: solid;
   z-index: 10;
+  border-style: solid;
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
   transition: all 200ms ease-in-out;
@@ -49,11 +49,9 @@ display: inline-block;
   border-style: solid;
   height: 500px;
   display: grid;
-  transition: all 300ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  grid-gap: 100px;
 }
-
-
-
 
 .slider {
   -webkit-appearance: none;
