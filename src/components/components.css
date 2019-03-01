@@ -1,36 +1,60 @@
-.highlighted {
-  color: red;
-  list-style-type: none;
-}
 
-.unhighlighted {
-  list-style-type: none;
-}
-
-
-.vertical {
-  display: inline-block;
-}
 
 ul {
-    list-style: outside none none;
+  list-style: outside none none;
+}
+
+.menu {
+  display: inline-block;
+  text-transform: uppercase;
+  margin-left: 10%;
+  border-style: solid;
 }
 
 .navbar {
-margin-top: 100px;
+  width: 80%;
+  margin: auto;
 }
 
-.project {
-   -webkit-transition: all 1s ease-in-out;
-   -moz-transition: all 1s ease-in-out;
-  transition: all 400ms ease-in-out;
+.projectImage {
+  width: auto;
+  height: 300px;
+  pointer-events: none;
 }
 
-.box {
-  width: 30px;
-  height: 30px;
-  background-color: red;
+.unselected {
+width: 800px;
+height: 500px;
+filter: blur(4px);
+border-style: solid;
+transform: scale(0.5);
+display: inline-block;
+margin-left: 130px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  transition: all 200ms ease-in-out;
 }
+
+.selected {
+    width: 800px;
+  height: 500px;
+  border-style: solid;
+  z-index: 10;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.carousel {
+  grid-template-columns: 500px 500px 500px;
+  border-style: solid;
+  height: 500px;
+  display: grid;
+  transition: all 300ms ease-in-out;
+}
+
+
+
 
 .slider {
   -webkit-appearance: none;
@@ -63,71 +87,13 @@ margin-top: 100px;
   opacity: 1;
 }
 
-.element {
-  margin-bottom: 10px;
-  margin-left: 10px;
-  width: 350px;
-  height: 300px;
-  border-style: solid;
-  display: inline-block;
-}
-
 .description {
-  width: 400px;
-  white-space: normal;
-  display: inline-block;
-}
-
-.carousel {
-  padding-left: 30px;
-}
-
-.active {
-  border-color: red;
-}
-
-.inactive {
-
-}
-
-.left {
-  position: relative;
-  top: 70px;
-}
-
-.right {
-  position: absolute;
-  bottom: 250px;
-  left: 750px;
+    pointer-events: none;
 
 }
 
 
-.progressbar .progress {
-  background-color: green;
-  border-radius: 4px;
-  transition: width 400ms ease-in-out;
-  height: 100%;
-}
 
-.progressbar {
-  width: 100%;
-  height: 30px;
-  border-radius: 4px;
-  background-color: lightgrey;
-  padding: 10px;
-}
 
-#root {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
-#App {
-  width: 70%;
-  height: 100%;
-  margin: 10px;
-}
+

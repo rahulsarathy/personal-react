@@ -1,43 +1,47 @@
 import React, { Component } from 'react';
 import './components.css';
-import Navbar from './Navbar'
 import Project from './Project'
+
+const images = ["https://www.gstatic.com/webp/gallery/4.webp", "https://www.gstatic.com/webp/gallery/3.jpg", "https://www.gstatic.com/webp/gallery/1.webp"];
+const descriptions = ["this is project 1", "this is project 2", "this is project 3"];
+
+var projects = [];
 
 class Carousel extends Component {
 
-   constructor(props){
-    super(props);
-    this.handleDown = this.handleDown.bind(this);
-    this.handleUp = this.handleUp.bind(this);
-
-
-    this.state = {
-      selected: 0, 
-      zoom: 1.0
-    };
-   
-   }
-
-   handleDown(event) {
-    this.setState(
+   createProjects(){
+    projects = [];
+    var zoom;
+    var selected;
+    console.log("current Project is " + this.props.currentProject);
+    for (var i =0; i < images.length; i++)
+    {
+      if ( i === Number.parseInt(this.props.currentProject))
       {
-        zoom: 0.5
-      });
-   }
+        selected = true;
+        zoom = this.props.zoom; 
+      }
+      else {
+         zoom = false;
+        selected = false;
+      }
 
-   handleUp(event) {
-    this.setState(
-      {
-        zoom: 1.0
-      });
+      projects.push(<Project onClick={this.props.onClick} image={images[i]} key={i} index={i} description={descriptions[i]} selected={selected} zoom={zoom}/>);
+    }
    }
-
 
   render() {
+    var toShift = 30 + this.props.currentProject * -24.92
+    var shift = {
+      marginLeft: toShift + '%'
+    };
+    this.createProjects();
     return (
-      <div className="carousel">
-        <Project zoom={this.state.zoom}/>
-        <Navbar handleDown={this.handleDown} handleUp={this.handleUp}/>
+      <div>
+        <div className="carousel" style={shift}>
+          {projects}
+        </div>
+
       </div>
     );
   }
